@@ -13,8 +13,8 @@ class HOC extends Component{
         this.state = {route: 'home'}
     }
 
-    handleToUpdate = (someArg) => {
-            this.setState({route:someArg})
+    handleRouteUpdate = (arg) => {
+            this.setState({route:arg})
     }
 
 
@@ -27,14 +27,15 @@ class HOC extends Component{
     <div>
       <div className="container">
       <div className="imgRow"> 
-        <img src="./lemonlight.png"></img>
+        <img src="./lemonlight.png" alt="lemon light logo"></img>
       </div>
 
-
         <div className="row">
+
           <div className="colLeft">
-            <SideNav handleToUpdate = {this.handleToUpdate}  />
+            <SideNav handleRouteUpdate= {this.handleRouteUpdate}  />
           </div>  
+
           <div className="colRight">
             {this.state.route==='home'&& 
                 <Home/>

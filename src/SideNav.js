@@ -19,23 +19,23 @@ class SideNav extends Component{
             isToggleFirstOn: !prevState.isToggleFirstOn
         }));
 
-        this.props.handleToUpdate('dashboard');
+        this.props.handleRouteUpdate('dashboard');
       }
 
       handleBQ() {
         this.setState(prevState => ({
             isToggleSecondOn: !prevState.isToggleSecondOn
         }));
-        this.props.handleToUpdate('brand');
+        this.props.handleRouteUpdate('brand');
       }
 
 
       handlePQ() {
-        this.props.handleToUpdate('project');
+        this.props.handleRouteUpdate('project');
       }
 
       handleUpload() {
-        this.props.handleToUpdate('upload');
+        this.props.handleRouteUpdate('upload');
       }
 
 
@@ -45,10 +45,10 @@ class SideNav extends Component{
         return(
             <div>
                  <div className="nav" id="firstNav"
-                onClick={this.handlePreproduction}>Pre-Production</div>
-                    <div className={this.state.isToggleFirstOn ? 'subnav' : 'showFirst'} onClick={this.handleBQ}>Brand Questionnaire</div>
-                    <div className={this.state.isToggleFirstOn ? 'subnav' : 'showFirst'} onClick={this.handlePQ}>Project Questionnaire</div>
-                    <div className={this.state.isToggleFirstOn ? 'subnav' : 'showFirst'} onClick={this.handleUpload}>Upload Assets</div>
+                onClick={this.handlePreproduction} tabIndex="1">Pre-Production</div>
+                    <div className={this.state.isToggleFirstOn ? 'subnav' : 'showFirst'} onClick={this.handleBQ} tabIndex="2">Brand Questionnaire</div>
+                    <div className={this.state.isToggleFirstOn ? 'subnav' : 'showFirst'} onClick={this.handlePQ} tabIndex="3">Project Questionnaire</div>
+                    <div className={this.state.isToggleFirstOn ? 'subnav' : 'showFirst'} onClick={this.handleUpload} tabIndex="4">Upload Assets</div>
                  <div onClick={this.handleSecondClick} className="nav"  id="secondNav">Production</div>
                  <div onClick={this.handleThirdClick} className="nav"  id="thirdNav">Post Production</div>
             </div>
